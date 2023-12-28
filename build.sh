@@ -1,0 +1,1 @@
+docker build -t shiharuharu/cloudflare-warp:latest .
