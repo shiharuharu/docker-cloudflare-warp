@@ -1,4 +1,4 @@
-mkdir -p /docker/cloudflare-warp
+mkdir -p /docker/cloudflare-warp/config
 
 cat > /docker/cloudflare-warp/docker-compose.yaml <<EOF
 version: '3.7'
@@ -11,6 +11,8 @@ services:
     environment:
       - FAMILIES_MODE=off
       - CUSTOM_ENDPOINT=162.159.192.173:3854
+    volumes:
+      - ./config:/var/lib/cloudflare-warp
     ports:
       - 40000:1080
 EOF

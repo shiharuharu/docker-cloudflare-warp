@@ -5,7 +5,7 @@ sleep 2
 
 
 if [[ -n $TEAMS_ENROLL_TOKEN ]]; then
-  warp-cli teams-enroll-token "${TEAMS_ENROLL_TOKEN}"
+  warp-cli --accept-tos teams-enroll-token "${TEAMS_ENROLL_TOKEN}"
 else
   warp-cli --accept-tos register
 fi
