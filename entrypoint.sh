@@ -2,7 +2,14 @@
 set -m
 warp-svc &
 sleep 2
-warp-cli --accept-tos register
+
+
+if [[ -n $TEAMS_ENROLL_TOKEN ]]; then
+  warp-cli teams-enroll-token "${TEAMS_ENROLL_TOKEN}"
+else
+  warp-cli --accept-tos register
+fi
+
 warp-cli --accept-tos set-proxy-port 40000
 warp-cli --accept-tos set-mode proxy
 warp-cli --accept-tos disable-dns-log

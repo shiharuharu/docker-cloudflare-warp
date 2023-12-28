@@ -8,6 +8,9 @@ services:
     container_name: cloudflare-warp
     restart: unless-stopped
     privileged: true
+    environment:
+      - FAMILIES_MODE=off
+      - CUSTOM_ENDPOINT=162.159.192.173:3854
     ports:
       - 40000:1080
 EOF
@@ -26,3 +29,5 @@ docker-compose -f /docker/cloudflare-warp/docker-compose.yaml kill
 docker-compose -f /docker/cloudflare-warp/docker-compose.yaml down
 EOF
 chmod +x /docker/cloudflare-warp/stop-compose.sh
+
+/docker/cloudflare-warp/start-compose.sh
