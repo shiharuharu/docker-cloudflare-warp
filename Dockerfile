@@ -1,6 +1,7 @@
 FROM ubuntu:22.04
 ENV WARP_LICENSE=
 ENV FAMILIES_MODE=off
+ENV CUSTOM_ENDPOINT=
 EXPOSE 1080/tcp
 RUN apt update && \
   apt install curl gpg socat -y && \
