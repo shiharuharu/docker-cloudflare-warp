@@ -8,13 +8,12 @@ services:
     container_name: cloudflare-warp
     restart: unless-stopped
     privileged: true
+    network_mode: "host"
     environment:
       - FAMILIES_MODE=off
-      - CUSTOM_ENDPOINT=162.159.192.173:3854
+      - CUSTOM_ENDPOINT=162.159.192.173:7559
     volumes:
       - ./config:/var/lib/cloudflare-warp
-    ports:
-      - 40000:1080
 EOF
 
 cat > /docker/cloudflare-warp/start-compose.sh <<EOF
