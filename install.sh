@@ -11,6 +11,8 @@ services:
     network_mode: "host"
     environment:
       - FAMILIES_MODE=off
+      - WARP_LISTEN_PORT=40000
+      - SOCKS5_PORT=40001
       - CUSTOM_ENDPOINT=162.159.192.173:7559
     volumes:
       - ./config:/var/lib/cloudflare-warp

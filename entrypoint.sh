@@ -19,7 +19,6 @@ else
   warp-cli --accept-tos set-proxy-port 40000
 fi
 
-
 if [[ -n $CUSTOM_ENDPOINT ]]; then
   warp-cli --accept-tos set-custom-endpoint "${CUSTOM_ENDPOINT}"
 fi
